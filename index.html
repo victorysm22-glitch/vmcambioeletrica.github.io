@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VM Câmbio & Elétrica — especialistas em câmbio automático e elétrica automotiva.">
+  <title>VM Câmbio & Elétrica</title>
+  <style>
+    :root{
+      --black:#050505;
+      --black2:#0b0b0b;
+      --metal:#b8bcc0;
+      --metal2:#72777c;
+      --red:#e10600;
+      --white:#f5f5f5;
+      --line:rgba(255,255,255,.10);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--black);
+      color:var(--white);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:20;
+      background:rgba(5,5,5,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    nav{
+      height:76px;display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{font-weight:900;letter-spacing:-1.5px;font-size:25px}
+    .brand span{color:var(--red)}
+    .navlinks{display:flex;gap:30px;font-size:13px;text-transform:uppercase;letter-spacing:2px}
+    .navlinks a:hover{color:var(--red)}
+    .hero{
+      min-height:100vh;display:flex;align-items:center;
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 72% 40%,rgba(225,6,0,.14),transparent 30%),
+        linear-gradient(90deg,#050505 0%,#050505 43%,rgba(5,5,5,.68) 70%,#050505 100%);
+    }
+    .hero:after{
+      content:"";position:absolute;inset:0;opacity:.16;
+      background-image:url("hero-visual.png");
+      background-size:cover;background-position:center;
+      mix-blend-mode:screen;pointer-events:none;
+    }
+    .hero-content{position:relative;z-index:2;padding-top:76px;max-width:650px}
+    .eyebrow{font-size:12px;letter-spacing:5px;color:var(--red);text-transform:uppercase;margin-bottom:22px}
+    h1{
+      font-size:clamp(48px,7vw,92px);line-height:.92;
+      letter-spacing:-5px;text-transform:uppercase;
+    }
+    h1 .gray{color:var(--metal)}
+    h1 .red{color:var(--red)}
+    .hero-line{width:110px;height:2px;background:var(--red);margin:28px 0}
+    .hero p{font-size:20px;color:#c8c8c8;max-width:520px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .btn{
+      padding:14px 22px;border:1px solid var(--red);
+      text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:700;
+      transition:.25s;
+    }
+    .btn.primary{background:var(--red)}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(225,6,0,.18)}
+    section{padding:105px 0;border-top:1px solid var(--line)}
+    .section-label{font-size:11px;letter-spacing:5px;color:var(--red);text-transform:uppercase;margin-bottom:14px}
+    .section-title{font-size:clamp(30px,4vw,48px);letter-spacing:-1px;text-transform:uppercase}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .about-text p{color:#aaa;margin-top:24px;max-width:560px}
+    .about-card{
+      min-height:330px;border:1px solid var(--line);padding:38px;
+      background:linear-gradient(135deg,#111,#070707);
+      position:relative;overflow:hidden;
+    }
+    .about-card:before{
+      content:"VM";position:absolute;right:-10px;bottom:-60px;
+      font-size:180px;font-weight:900;color:rgba(255,255,255,.025);
+    }
+    .services{background:#080808}
+    .service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:45px}
+    .service{
+      padding:38px;border:1px solid var(--line);
+      background:linear-gradient(145deg,#101010,#080808);
+      transition:.25s;
+    }
+    .service:hover{border-color:rgba(225,6,0,.5);transform:translateY(-3px)}
+    .icon{font-size:35px;color:var(--red);margin-bottom:22px}
+    .service h3{text-transform:uppercase;letter-spacing:1px;margin-bottom:15px}
+    .service p{color:#999}
+    .contact{
+      background:linear-gradient(180deg,#0b0b0b,#050505);
+      text-align:center;
+    }
+    .contact-box{margin-top:35px;display:flex;justify-content:center;gap:50px;flex-wrap:wrap}
+    .contact-item{min-width:240px}
+    .contact-item small{display:block;color:var(--red);letter-spacing:3px;text-transform:uppercase;margin-bottom:7px}
+    .contact-item strong{font-size:22px}
+    footer{padding:38px 0;text-align:center;border-top:1px solid var(--line);color:#777}
+    footer strong{color:var(--metal);font-size:18px}
+    footer span{color:var(--red)}
+    @media(max-width:760px){
+      .navlinks{display:none}
+      nav{height:68px}
+      .hero{min-height:850px}
+      .hero-content{padding-top:80px}
+      h1{letter-spacing:-3px}
+      .about-grid,.service-grid{grid-template-columns:1fr}
+      section{padding:75px 0}
+      .contact-box{gap:28px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#inicio">VM <span>CÂMBIO & ELÉTRICA</span></a>
+      <div class="navlinks">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Especialidades</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Precisão • Tecnologia • Confiança</div>
+        <h1><span class="gray">VM</span><br>CÂMBIO <span class="gray">&</span><br><span class="red">ELÉTRICA</span></h1>
+        <div class="hero-line"></div>
+        <p>Especialistas em câmbio automático e elétrica automotiva.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://wa.me/5583986830235" target="_blank">Fale no WhatsApp</a>
+          <a class="btn" href="https://www.instagram.com/vmcambioeletrica/" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-label">Sobre nós</div>
+          <h2 class="section-title">Seu veículo em boas mãos.</h2>
+          <p>A VM Câmbio & Elétrica apresenta uma proposta especializada para quem busca cuidado técnico, diagnóstico preciso e soluções confiáveis para o veículo.</p>
+          <p>Nosso foco está em câmbio automático e elétrica automotiva, unindo tecnologia, conhecimento e atenção aos detalhes.</p>
+        </div>
+        <div class="about-card">
+          <div class="section-label">VM</div>
+          <h3 style="font-size:32px;text-transform:uppercase;max-width:300px">Especialização que transmite confiança.</h3>
+          <p style="color:#888;margin-top:18px">Uma apresentação moderna para uma empresa automotiva com identidade forte e profissional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="servicos">
+    <div class="container">
+      <div class="section-label">Especialidades</div>
+      <h2 class="section-title">Conheça nosso foco</h2>
+      <div class="service-grid">
+        <article class="service">
+          <div class="icon">⚙</div>
+          <h3>Câmbio Automático</h3>
+          <p>Especialização em diagnóstico, manutenção e cuidados relacionados ao sistema de transmissão automática.</p>
+        </article>
+        <article class="service">
+          <div class="icon">ϟ</div>
+          <h3>Elétrica Automotiva</h3>
+          <p>Atuação em sistemas elétricos e diagnóstico eletrônico, com foco em segurança e precisão.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="container">
+      <div class="section-label">Entre em contato</div>
+      <h2 class="section-title">VM Câmbio & Elétrica</h2>
+      <div class="contact-box">
+        <a class="contact-item" href="tel:+5583986830235">
+          <small>Telefone / WhatsApp</small>
+          <strong>83 98683-0235</strong>
+        </a>
+        <a class="contact-item" href="https://www.instagram.com/vmcambioeletrica/" target="_blank">
+          <small>Instagram</small>
+          <strong>@vmcambioeletrica</strong>
+        </a>
+      </div>
+      <div class="actions" style="justify-content:center">
+        <a class="btn primary" href="https://wa.me/5583986830235" target="_blank">Solicitar atendimento</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <strong>VM <span>CÂMBIO & ELÉTRICA</span></strong>
+  <p style="margin-top:8px">Precisão • Tecnologia • Confiança</p>
+</footer>
+
+</body>
+</html>
